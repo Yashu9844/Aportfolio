@@ -242,7 +242,7 @@ const Projects = () => {
       relatedProjects: [0, 3]
     },
     { 
-      image: '/images/pimg6.jpg',
+      image: '/portfolio-images-work/figma-working/re22.png',
       title: 'Social Platform',
       category: 'Web Application',
       year: '2023',
@@ -339,26 +339,29 @@ const Projects = () => {
 
   gsap.registerPlugin(ScrollTrigger)
   useGSAP(function () {
-    const animation = gsap.fromTo('.hero', 
-      {
-        height: '100px',
-        opacity: 0.3
-      },
-      {
-        height: 'auto',
-        opacity: 1,
-        stagger: {
-          amount: 0.5,
+    // Only apply animation on non-mobile devices
+    if (window.innerWidth > 768) {
+      const animation = gsap.fromTo('.hero', 
+        {
+          height: '100px',
+          opacity: 0.3
         },
-        scrollTrigger: {
-          trigger: '.lol',
-          markers: false,
-          start: 'top 80%',
-          end: 'top -100%',
-          scrub: 1
+        {
+          height: 'auto',
+          opacity: 1,
+          stagger: {
+            amount: 0.5,
+          },
+          scrollTrigger: {
+            trigger: '.lol',
+            markers: false,
+            start: 'top 80%',
+            end: 'top -100%',
+            scrub: 1
+          }
         }
-      }
-    )
+      )
+    }
 
     // Listen for programmatic scroll and instantly expand all cards
     const handleProgrammaticScroll = () => {
