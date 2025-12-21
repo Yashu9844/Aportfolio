@@ -157,7 +157,7 @@ const CircleCarousel = () => {
                     zIndex: i === currentIndex ? 100 : 1,
                   }}
                   animate={{
-                    x: (i - currentIndex) * window.innerWidth * 0.5,
+                    x: (i - currentIndex) * (typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0),
                     opacity: i === currentIndex ? 1 : 0.3,
                     scale: i === currentIndex ? 1 : 0.8,
                   }}

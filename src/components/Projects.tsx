@@ -320,6 +320,9 @@ const Projects = () => {
 
   // ESC key to close modal & prevent body scroll
   useEffect(() => {
+  
+
+    
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSelectedProject(null)
     }
@@ -339,6 +342,9 @@ const Projects = () => {
 
   gsap.registerPlugin(ScrollTrigger)
   useGSAP(function () {
+    // Skip on server-side rendering
+    if (typeof window === 'undefined') return;
+    
     // Only apply animation on non-mobile devices
     if (window.innerWidth > 768) {
       const animation = gsap.fromTo('.hero', 
