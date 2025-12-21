@@ -120,7 +120,7 @@ const CircleCarousel = () => {
   if (isMobile) {
     return (
       <main className="w-full bg-black text-white">
-        <div className="px-4 sm:px-6 pt-10 sm:pt-12 mb-6">
+        <div className="px-4 sm:px-6 pt-10 sm:pt-12 mb-8">
           <h2 
             className="text-4xl sm:text-5xl font-primary text-white font-normal leading-[0.95] tracking-[-0.01em] flex items-center gap-3"
             onMouseEnter={() => setIsArrowHovered(true)}
@@ -142,59 +142,97 @@ const CircleCarousel = () => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="relative w-full bg-black mb-8 overflow-hidden py-8">
-          {/* Carousel container - Centered */}
-          <div className="flex items-center justify-center">
+        <div className="relative w-full bg-black mb-12 overflow-hidden py-4">
+          {/* Carousel container */}
+          <div className="flex items-center justify-center px-4">
             <div 
-              className="relative w-full flex items-center justify-center overflow-hidden"
-              style={{ height: "max(400px, 85vw)" }}
+              className="relative w-full flex items-center justify-center overflow-visible"
+              style={{ height: "max(420px, 90vw)" }}
             >
               {images.map((src, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-[85vw] sm:w-[70vw] aspect-square overflow-hidden rounded-2xl cursor-grab active:cursor-grabbing"
+                  className="absolute cursor-grab active:cursor-grabbing"
                   style={{
                     zIndex: i === currentIndex ? 100 : 1,
+                    width: "min(340px, 82vw)",
                   }}
                   animate={{
                     x: (i - currentIndex) * (typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0),
-                    opacity: i === currentIndex ? 1 : 0.3,
-                    scale: i === currentIndex ? 1 : 0.8,
+                    opacity: i === currentIndex ? 1 : 0.2,
+                    scale: i === currentIndex ? 1 : 0.85,
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: 400,
-                    damping: 35,
-                    mass: 1,
+                    stiffness: 350,
+                    damping: 30,
+                    mass: 0.8,
                   }}
                   drag={i === currentIndex ? "x" : false}
                   dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.5}
+                  dragElastic={0.3}
                   onDragStart={handleDragStart}
                   onDragEnd={handleDragEnd}
                 >
-                  <img
-                    src={src}
-                    alt={`testimonial-${i}`}
-                    className="w-full h-full object-cover select-none"
-                    draggable={false}
-                  />
+                  {/* Premium card container */}
+                  <div className="relative group">
+                    {/* Subtle border glow */}
+                    <div className="absolute -inset-[1px] bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Card content */}
+                    <div className="relative bg-black border border-white/10 overflow-hidden aspect-square">
+                      {/* Image with overlay */}
+                      <div className="relative w-full h-full">
+                        <img
+                          src={src}
+                          alt={`testimonial-${i}`}
+                          className="w-full h-full object-cover select-none"
+                          draggable={false}
+                        />
+                        {/* Subtle gradient overlay for depth */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60" />
+                      </div>
+                      
+                      {/* Corner accent - top left */}
+                      <div className="absolute top-0 left-0 w-12 h-12">
+                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-white/40 to-transparent" />
+                        <div className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-white/40 to-transparent" />
+                      </div>
+                      
+                      {/* Corner accent - bottom right */}
+                      <div className="absolute bottom-0 right-0 w-12 h-12">
+                        <div className="absolute bottom-0 right-0 w-full h-[1px] bg-gradient-to-l from-white/40 to-transparent" />
+                        <div className="absolute bottom-0 right-0 h-full w-[1px] bg-gradient-to-t from-white/40 to-transparent" />
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center items-center gap-2 mt-6 pb-4">
+          {/* Premium dots indicator */}
+          <div className="flex justify-center items-center gap-1.5 mt-8 pb-2">
             {images.map((_, i) => (
               <motion.button
                 key={i}
                 onClick={() => setCurrentIndex(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === i ? "bg-white w-6" : "bg-white/30 w-2"
-                }`}
+                className="relative group"
                 aria-label={`Go to testimonial ${i + 1}`}
-              />
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {currentIndex === i ? (
+                  // Active indicator
+                  <div className="relative">
+                    <div className="w-8 h-[2px] bg-white" />
+                    <div className="absolute inset-0 w-8 h-[2px] bg-white blur-sm opacity-50" />
+                  </div>
+                ) : (
+                  // Inactive indicator
+                  <div className="w-2 h-[2px] bg-white/20 transition-all duration-300 group-hover:bg-white/40 group-hover:w-4" />
+                )}
+              </motion.button>
             ))}
           </div>
         </div>
