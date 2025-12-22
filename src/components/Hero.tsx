@@ -90,7 +90,7 @@ export default function Hero() {
               <div className="space-y-4 sm:space-y-6 md:space-y-7 lg:space-y-8">
                 <div className="flex items-center gap-2 sm:gap-4 md:gap-5">
                   <a
-                    href="https://github.com/YashavanthR"
+                    href="https://github.com/Yashu9844"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
@@ -108,7 +108,7 @@ export default function Hero() {
                     <Linkedin className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                   </a>
                   <a
-                    href="https://leetcode.com/u/yashavanth_r_siddesh"
+                    href="https://leetcode.com/u/mr_alpha"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LeetCode"
