@@ -502,9 +502,9 @@ const Footer = () => {
               </h3>
               <div className="flex flex-col gap-4">
                 {[
-                  { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-                  { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+                  { icon: Github, href: "https://github.com/Yashu9844", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/yashavanth-r-siddesh", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:yashavanthrsiddesh@gmail.com", label: "Email" },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -561,9 +561,9 @@ const Footer = () => {
               </motion.span>
               <div className="flex flex-row items-center gap-4">
                 {[
-                  { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-                  { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+                  { icon: Github, href: "https://github.com/Yashu9844", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/yashavanth-r-siddesh", label: "LinkedIn" },
+                  { icon: Mail, href: "mailto:yashavanthrsiddesh@gmail.com", label: "Email" },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}

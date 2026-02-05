@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import EyeFollower from './EyeFollower';
 import { useScrollToSection } from '@/hooks/useScrollToSection';
 
@@ -18,6 +19,8 @@ export default function Navigation() {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isOpen = isMenuHovered && !forceClosed;
   const scrollToSection = useScrollToSection();
+
+  const pathname = usePathname();
 
   // Detect touch device
   useEffect(() => {
@@ -191,53 +194,55 @@ export default function Navigation() {
                   <span className="tracking-wider text-[10px]">DOWNLOAD</span>
                 </a>
                 
-                {/* Sections Section */}
-                <div className="mb-10">
-                  <h3 className={`text-white/70 text-sm font-secondary tracking-wider mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
-                    isMenuHovered ? (fastOpen ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 delay-[100ms]') : 'opacity-0 translate-y-4'
-                  }`}>SECTIONS</h3>
-                  <div className="space-y-3">
-                    {[
-                      { label: 'Projects', href: '#projects' },
-                      { label: 'Featured', href: '#featured' },
-                      { label: 'Approach', href: '#approach' },
-                      { label: 'Tech Stack', href: '#tech-stack' },
-                      { label: 'Testimonials', href: '#testimonials' }
-                    ].map((item, index) => (
-                      <a 
-                        key={item.label}
-                        href={item.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const sectionId = item.href.replace('#', '');
-                          scrollToSection(sectionId);
-                          setIsMenuHovered(false);
-                          setForceClosed(true);
-                          setFastOpen(false);
-                        }}
-                        className={`block text-white text-base sm:text-lg font-primary py-1.5 pointer-events-auto cursor-pointer ${fastOpen ? 'transition-none' : 'transition-colors duration-100'} hover:text-white/80 ${
-                          isMenuHovered 
-                            ? 'opacity-100 translate-y-0' 
-                            : 'opacity-0 translate-y-6'
-                        }`}
-                        style={{ 
-                          transitionDelay: fastOpen ? '0ms' : (isMenuHovered ? `${150 + (index * 50)}ms` : '0ms'),
-                          transitionProperty: isMenuHovered ? 'opacity, transform' : 'opacity, transform, color'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.transform = 'translateX(8px)';
-                          e.target.style.transition = 'transform 0.1s ease-out, color 0.1s ease-out';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.transform = 'translateX(0px)';
-                          e.target.style.transition = 'transform 0.1s ease-out, color 0.1s ease-out';
-                        }}
-                      >
-                        {item.label}
-                      </a>
-                    ))}
+                {/* Sections Section - Only visible on home page */}
+                {pathname === '/' && (
+                  <div className="mb-10">
+                    <h3 className={`text-white/70 text-sm font-secondary tracking-wider mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
+                      isMenuHovered ? (fastOpen ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 delay-[100ms]') : 'opacity-0 translate-y-4'
+                    }`}>SECTIONS</h3>
+                    <div className="space-y-3">
+                      {[
+                        { label: 'Projects', href: '#projects' },
+                        { label: 'Featured', href: '#featured' },
+                        { label: 'Approach', href: '#approach' },
+                        { label: 'Tech Stack', href: '#tech-stack' },
+                        { label: 'Testimonials', href: '#testimonials' }
+                      ].map((item, index) => (
+                        <a 
+                          key={item.label}
+                          href={item.href}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const sectionId = item.href.replace('#', '');
+                            scrollToSection(sectionId);
+                            setIsMenuHovered(false);
+                            setForceClosed(true);
+                            setFastOpen(false);
+                          }}
+                          className={`block text-white text-base sm:text-lg font-primary py-1.5 pointer-events-auto cursor-pointer ${fastOpen ? 'transition-none' : 'transition-colors duration-100'} hover:text-white/80 ${
+                            isMenuHovered 
+                              ? 'opacity-100 translate-y-0' 
+                              : 'opacity-0 translate-y-6'
+                          }`}
+                          style={{ 
+                            transitionDelay: fastOpen ? '0ms' : (isMenuHovered ? `${150 + (index * 50)}ms` : '0ms'),
+                            transitionProperty: isMenuHovered ? 'opacity, transform' : 'opacity, transform, color'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.target.style.transform = 'translateX(8px)';
+                            e.target.style.transition = 'transform 0.1s ease-out, color 0.1s ease-out';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.target.style.transform = 'translateX(0px)';
+                            e.target.style.transition = 'transform 0.1s ease-out, color 0.1s ease-out';
+                          }}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
                 
                 {/* Divider */}
                 <div className={`border-t border-white/20 mb-6 ${fastOpen ? 'transition-none' : 'transition-all duration-400'} ${
