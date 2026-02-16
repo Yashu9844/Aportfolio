@@ -203,7 +203,7 @@ export default function Navigation() {
                     <div className="space-y-3">
                       {[
                         { label: 'Projects', href: '#projects' },
-                        { label: 'Featured', href: '#featured' },
+                        { label: 'Achievements', href: '#featured' },
                         { label: 'Approach', href: '#approach' },
                         { label: 'Tech Stack', href: '#tech-stack' },
                         { label: 'Testimonials', href: '#testimonials' }
