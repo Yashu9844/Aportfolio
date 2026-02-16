@@ -243,78 +243,108 @@ const Projects = () => {
     },
     { 
       image: '/portfolio-images-work/figma-working/re22.png',
-      title: 'Social Platform',
-      category: 'Web Application',
-      year: '2023',
-      description: 'Social networking platform with real-time features.',
+      title: 'ApniSec – Cybersecurity Issue Platform',
+      category: 'Full Stack Web Application',
+      year: '2025',
+      description: 'Enterprise‑grade security issue management platform with JWT authentication, rate limiting, email workflows, and a cybersecurity‑themed dashboard built on Next.js 15.',
       fullDescription: [
-        'Developed a social platform with real-time messaging and notifications.',
-        'Implemented WebSocket connections for instant updates.',
-        'Built scalable backend architecture handling thousands of concurrent users.'
+        'Problem → Security teams juggle spreadsheets, Slack threads, and email chains to track vulnerabilities. There is no single, focused tool that combines issue tracking with built‑in auth, notifications, and audit logging.',
+        'Solution → A purpose‑built platform where teams create, filter, search, and resolve security issues through a polished dashboard with real‑time stats, role‑based access, and automated email alerts on every status change.',
+        'Execution → Next.js 15 with React 19 and Server Actions for zero‑latency mutations. Prisma ORM on PostgreSQL for transactional integrity. Custom JWT auth with bcrypt hashing, email verification, and forgot‑password flows. Rate limiting at 100 req/15 min per IP. Resend API for templated emails across 4 lifecycle events. Structured logging with multiple severity levels.',
+        'Outcome → 80%+ Lighthouse SEO score, sub‑200ms API responses, and a clean separation of concerns that makes adding new issue types or notification channels trivial.'
       ],
       informationParagraphs: [
-        'This platform connects users worldwide with real-time communication.',
-        'Focused on scalability and performance optimization.'
+        'ApniSec was designed to feel like a product, not a side project. The auth system is fully custom—no third‑party providers—covering registration, login, email verification, password reset, and profile management. Every protected route validates tokens server‑side before rendering.',
+        'The issue management layer supports full CRUD with filtering by severity, status, and date range. A stats dashboard aggregates open, resolved, and critical counts in real time. Search is debounced and indexed for fast results even at scale.',
+        'Engineering choices prioritize auditability: every API call is logged with timestamp, IP, and user context. Rate limiting prevents abuse without degrading legitimate usage. The email pipeline uses Resend with branded HTML templates for welcome, issue creation, password reset, and profile update events.'
       ],
-      tech: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
+      tech: ['Next.js 15', 'React 19', 'TypeScript', 'PostgreSQL', 'Prisma', 'JWT', 'Resend', 'TailwindCSS', 'Zod', 'bcrypt'],
       role: 'Full Stack Developer',
-      duration: '5 months',
-      github: 'https://github.com/username/social',
-      live: 'https://example.com',
+      duration: '2 months',
+      github: 'https://github.com/Yashu9844/ApniSec',
+      live: 'https://apni-sec-azure.vercel.app',
       credits: [
-        { role: 'Full Stack', name: 'Zubair Mallik' },
-        { role: 'Backend', name: 'Dev Team' }
-      ]
+        { role: 'Product & Engineering', name: 'Yashavanth R Siddesh' }
+      ],
+      mediaSections: [
+        {
+          items: [
+            { type: 'image', url: '/portfolio-images-work/figma-working/re22.png' }
+          ],
+          layout: 'single'
+        }
+      ],
+      relatedProjects: [0, 3]
     },
     { 
       image: '/images/pimg7.jpg',
-      title: 'AI Assistant',
-      category: 'AI/ML',
-      year: '2023',
-      description: 'AI-powered assistant with natural language processing.',
+      title: 'BeyondChats – AI Article Enhancement',
+      category: 'Full Stack Web Application',
+      year: '2025',
+      description: 'Full‑stack article enhancement platform that scrapes, stores, and AI‑enriches blog content with curated references, powered by Laravel, a Node.js worker, and a React 19 frontend.',
       fullDescription: [
-        'Built an AI assistant using OpenAI API for natural conversations.',
-        'Implemented context-aware responses and memory management.',
-        'Created intuitive chat interface with typing indicators and animations.'
+        'Problem → Content teams publish articles quickly but lack the tooling to automatically enrich them with relevant citations, context, and AI‑generated insights—leaving readers with shallow, unsupported claims.',
+        'Solution → A three‑tier system: a Laravel API for article CRUD and user management, a Node.js worker that scrapes and ingests articles on a schedule, and a React 19 SPA that displays AI‑enhanced content with inline references and source attribution.',
+        'Execution → Laravel 12 on PHP 8.3 with SQLite for rapid development and PostgreSQL for production. Node.js worker handles scraping queues with retry logic. Frontend built with React 19, Vite 7, Tailwind CSS v4, and Framer Motion for glass‑morphism UI. AI enhancement via Groq and Google Gemini LLMs with structured output parsing.',
+        'Outcome → Articles are enriched with 3–5 verified references each within seconds. The glass‑morphism dark‑theme UI scored consistently high on design feedback. Demo mode allows instant exploration without authentication.'
       ],
       informationParagraphs: [
-        'This AI assistant provides intelligent responses using cutting-edge NLP.',
-        'Integrated with various APIs to provide comprehensive assistance.'
+        'BeyondChats bridges the gap between raw content and research‑backed publishing. The scraping worker normalizes HTML from diverse sources, extracts clean text, and stores structured article data ready for AI processing.',
+        'The AI pipeline sends article content to Groq or Gemini with carefully crafted prompts that return JSON‑structured enhancements: summary, key insights, and reference URLs with relevance scores. Failed LLM calls fall back gracefully with cached results.',
+        'The frontend uses a premium glass‑morphism design language with backdrop blur, gradient borders, and smooth Framer Motion transitions. Every card, modal, and list item animates with intentional timing. Responsive across all breakpoints with a mobile‑first approach.'
       ],
-      tech: ['Python', 'OpenAI', 'FastAPI', 'React'],
-      role: 'AI Developer',
-      duration: '3 months',
-      github: 'https://github.com/username/ai-assistant',
-      live: 'https://example.com',
+      tech: ['Laravel 12', 'PHP 8.3', 'React 19', 'Vite', 'Node.js', 'TailwindCSS v4', 'Framer Motion', 'Groq AI', 'Gemini', 'PostgreSQL'],
+      role: 'Full Stack Developer',
+      duration: '1 month',
+      github: 'https://github.com/Yashu9844/BeyondChats-assignment',
+      live: 'https://beyond-chats-assignment-4v4q.vercel.app',
       credits: [
-        { role: 'AI Development', name: 'Zubair Mallik' },
-        { role: 'ML Training', name: 'Data Team' }
-      ]
+        { role: 'Product & Engineering', name: 'Yashavanth R Siddesh' }
+      ],
+      mediaSections: [
+        {
+          items: [
+            { type: 'image', url: '/images/pimg7.jpg' }
+          ],
+          layout: 'single'
+        }
+      ],
+      relatedProjects: [0, 5]
     },
     { 
       image: '/images/pimg8.jpg',
-      title: 'Blockchain DApp',
-      category: 'Web3',
+      title: 'TechyBlog – MERN Blogging Platform',
+      category: 'Full Stack Web Application',
       year: '2024',
-      description: 'Decentralized application on Ethereum blockchain.',
+      description: 'A full‑stack blogging platform with role‑based admin panel, JWT authentication, rich‑text editing, commenting, and search—built on the MERN stack with Redux Toolkit.',
       fullDescription: [
-        'Developed a decentralized application with smart contracts.',
-        'Implemented Web3 wallet integration and transaction handling.',
-        'Built secure and transparent blockchain interactions.'
+        'Problem → Developers and writers need a clean, fast blogging platform they fully control—not a hosted service with limitations on customization, monetization, or data ownership.',
+        'Solution → A self‑hosted MERN blog with a polished reading experience, admin dashboard for content management, JWT‑secured APIs, and integrated commenting and search.',
+        'Execution → MongoDB for flexible document storage, Express.js for RESTful APIs with middleware‑based auth, React with Redux Toolkit for predictable state management, and Node.js for the server runtime. JWT tokens handle authentication with role‑based access separating readers from admins. Rich‑text editor supports formatting, images, and code blocks.',
+        'Outcome → 30% faster API response times after Redux Toolkit optimization. Full CRUD for posts with integrated search, commenting, and admin controls. Deployed on Render with zero‑downtime deployments.'
       ],
       informationParagraphs: [
-        'This DApp leverages blockchain technology for transparency.',
-        'Smart contracts ensure trustless and secure operations.'
+        'TechyBlog demonstrates mastery of the classic MERN stack with modern patterns. The API layer uses Express middleware chains for authentication, validation, and error handling—each concern isolated and testable.',
+        'The admin panel provides full control: create, edit, delete, and feature posts. Role‑based access ensures only authenticated admins can modify content, while readers can browse, search, and comment freely.',
+        'State management via Redux Toolkit eliminated prop drilling and simplified async data flows. API response handling was optimized with RTK Query patterns, reducing unnecessary re‑renders and improving perceived performance across the application.'
       ],
-      tech: ['Solidity', 'Ethers.js', 'React', 'Hardhat'],
-      role: 'Blockchain Developer',
-      duration: '4 months',
-      github: 'https://github.com/username/dapp',
-      live: 'https://example.com',
+      tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Redux Toolkit', 'JWT', 'TailwindCSS', 'Render'],
+      role: 'Full Stack Developer',
+      duration: '2 months',
+      github: 'https://github.com/Yashu9844/MERN-BLOG',
+      live: 'https://techy-blog.onrender.com/',
       credits: [
-        { role: 'Smart Contract Dev', name: 'Zubair Mallik' },
-        { role: 'Security Audit', name: 'Audit Team' }
-      ]
+        { role: 'Product & Engineering', name: 'Yashavanth R Siddesh' }
+      ],
+      mediaSections: [
+        {
+          items: [
+            { type: 'image', url: '/images/pimg8.jpg' }
+          ],
+          layout: 'single'
+        }
+      ],
+      relatedProjects: [1, 5]
     }
   ]
 
