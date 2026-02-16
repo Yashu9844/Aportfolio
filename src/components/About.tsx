@@ -91,29 +91,27 @@ const About = () => {
 
         <div className="space-y-4 md:space-y-6 font-kh-teka" style={{ fontSize: '18px', lineHeight: '24px', color: 'rgb(229, 229, 229)' }}>
           <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            I&apos;m Yashavanth R Siddesh, a Full Stack Developer from Bengaluru. I focus on clean engineering, strong product thinking, and purposeful interfaces that solve meaningful problems.
+            I&apos;m Yashavanth R Siddesh, a Full Stack Developer from Bengaluru with a passion for building production-grade systems that serve real users at scale.
           </p>
 
           <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            At RoborosX, I built the Clinic Management module for SaveMe.life, serving 500+ doctors. I improved load times by 45% and contributed to three major product upgrades. At SDC, I mentored 300+ students and built tools that improved workflows by 40%.
+            At FalconX Technologies, I contribute to software systems delivered for ISRO programs—building React and Django modules for mission-critical workflows, working with Redis, RabbitMQ, and MQTT for high-frequency telemetry, and owning end-to-end development of a drone mission planning platform with live telemetry visualization.
           </p>
 
           <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            My key projects: an Interactive Phone Case eCommerce Platform (Next.js, Stripe, Cloudinary) with 99% uptime; an Agentic AI for Career Guidance with RAG and five AI workflows; and SaveMe.life (Laravel), improving appointment speed by 25%.
+            At RoborosX, I engineered the Clinic Management module for SaveMe.life v2 supporting 2,000+ daily consultations, cut system load times by 45%, and delivered 3 major product upgrades with API versioning that lowered maintenance overhead by 20%.
           </p>
 
           <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            I&apos;ve solved 400+ coding problems (300+ LeetCode) and won multiple competitions: 1st in Web Development, 1st in ML NOVA, and 3rd in an 8-hour AI Hackathon.
+            As a Tech Team Member at the Software Development Club, I mentored 300+ students across 5+ workshops, built the college event website with payment integration, and performed knowledge transfer to incoming team members.
+          </p>
+
+          <p className="about-paragraph md:text-[20px] md:leading-[26px]">
+            I&apos;ve solved 500+ coding problems including 400+ on LeetCode, and won multiple competitions: 1st in Web Development (30+ teams), 1st in ML NOVA (150+ participants), and 3rd in an 8-hour national hackathon (35+ teams).
           </p>
 
           <p className="about-paragraph md:text-[20px] md:leading-[26px]">
             I build systems that scale, experiences that resonate, and solutions that last—with clarity, craft, and intention.
-          </p>
-                    <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            At RoborosX, I built the Clinic Management module for SaveMe.life, serving 500+ doctors. I improved load times by 45% and contributed to three major product upgrades. At SDC, I mentored 300+ students and built tools that improved workflows by 40%.
-          </p>
-        <p className="about-paragraph md:text-[20px] md:leading-[26px]">
-            My key projects: an Interactive Phone Case eCommerce Platform (Next.js, Stripe, Cloudinary) with 99% uptime; an Agentic AI for Career Guidance with RAG and five AI workflows; and SaveMe.life (Laravel), improving appointment speed by 25%.
           </p>
 
           <div className="pt-4">

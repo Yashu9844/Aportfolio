@@ -24,68 +24,68 @@ const ArrowUpRight = (props: React.SVGProps<SVGSVGElement>) => (
 
 const featuredItems = [
   {
-    title: "Framer",
+    title: "1st Place – Web Dev",
     description:
-      "My portfolio was featured on the Framer Gallery, a collection of the best website design on the Framer platform",
+      "Secured 1st place in a Web Development competition among 30+ teams, demonstrating outstanding skills in building responsive, full‑stack web applications under time constraints.",
     image: "/images/pimg1.jpg",
     bg: "bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500",
-    link: "/achievements/framer",
+    link: "#",
   },
   {
-    title: "SiteInspire",
+    title: "1st Place – ML NOVA",
     description:
-      "Featured on Siteinspire, a long-standing showcase of exceptional web and interactive design.",
+      "Won 1st place at ML NOVA (150+ participants) by building an NLP‑powered AI agent with memory and a voice assistant for real‑time interaction during the college tech fest.",
     image: "/images/pimg2.jpg",
-    bg: "bg-white",
-    link: "/achievements/siteinspire",
+    bg: "bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500",
+    link: "#",
   },
   {
-    title: "A1 Gallery",
+    title: "500+ Problems Solved",
     description:
-      "Featured on A1.gallery, a curated collection showcasing the best websites on the web.",
+      "Solved 500+ coding problems including 400+ on LeetCode, demonstrating deep proficiency in data structures, algorithms, and competitive programming.",
     image: "/images/pimg3.jpg",
     bg: "bg-[#1a1a1a]",
-    link: "/achievements/a1gallery",
+    link: "https://leetcode.com/u/mr_alpha",
   },
   {
-    title: "LogoLounge 15",
+    title: "FalconX × ISRO",
     description:
-      "My designs were selected for LogoLounge Book 15, showcasing identity work from around the world",
+      "Contributing to software systems for ISRO programs at FalconX Technologies—building drone mission planning platforms and processing high‑frequency radar and telemetry data.",
     image: "/images/pimg4.jpg",
-    bg: "bg-orange-500",
-    link: "/achievements/logolounge",
+    bg: "bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600",
+    link: "#",
   },
   {
-    title: "Awwwards",
+    title: "3rd Place – Hackathon",
     description:
-      "Received recognition on Awwwards, the awards that recognize talent and effort of web designers.",
+      "Achieved 3rd place in an 8‑hour national hackathon with 150+ participants and 35+ teams, showcasing rapid prototyping and strong collaborative problem‑solving.",
     image: "/images/pimg5.jpg",
-    bg: "bg-gradient-to-br from-green-500 via-teal-500 to-cyan-500",
-    link: "/achievements/awwwards",
-  },
-  {
-    title: "CSS Design Awards",
-    description:
-      "Featured on CSS Design Awards, honoring web designers, developers and agencies for their outstanding work.",
-    image: "/images/pimg6.jpg",
     bg: "bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500",
-    link: "/achievements/cssdesignawards",
+    link: "#",
   },
   {
-    title: "Behance",
+    title: "2nd Place – DSA",
     description:
-      "Featured project on Behance, the world's largest creative network for showcasing and discovering creative work.",
+      "Secured 2nd place in a DSA competition with 50 participants, demonstrating strong algorithmic problem‑solving skills in timed, competitive conditions.",
+    image: "/images/pimg6.jpg",
+    bg: "bg-orange-500",
+    link: "#",
+  },
+  {
+    title: "SaveMe.life",
+    description:
+      "Engineered the Clinic Management module serving 2,000+ daily consultations at RoborosX, reducing load times by 45% and shipping 3 major product upgrades.",
     image: "/images/pimg7.jpg",
     bg: "bg-blue-600",
-    link: "/achievements/behance",
+    link: "#",
   },
   {
-    title: "Dribbble",
+    title: "300+ Students Mentored",
     description:
-      "Featured shot on Dribbble, where designers gain inspiration, feedback, community, and jobs worldwide.",
+      "Led 5+ workshops and mentored 300+ students at the Software Development Club, contributing to event websites and payment integration modules.",
     image: "/images/pimg8.jpg",
     bg: "bg-pink-500",
-    link: "/achievements/dribbble",
+    link: "#",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function FeaturedPage() {
           onMouseEnter={() => setIsArrowHovered(true)}
           onMouseLeave={() => setIsArrowHovered(false)}
         >
-          <span>Featured</span>
+          <span>Achievements</span>
           <motion.span 
             className="text-white/30"
             animate={{

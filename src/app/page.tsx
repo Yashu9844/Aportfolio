@@ -47,7 +47,7 @@ export default function Home() {
       {/* Separator */}
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
       
-      {/* Featured Section */}
+      {/* Achievements Section */}
        <div id="featured" className="py-12 sm:py-20 md:py-28 lg:py-32">
         <FeaturedPage />
       </div>
