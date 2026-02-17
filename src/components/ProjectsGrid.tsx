@@ -103,7 +103,7 @@ export default function ProjectsGrid({ projects, allProjects }: ProjectsGridProp
               Projects
             </h1>
             <p className="text-xl text-gray-400 font-light">
-              Selected works from 2023-2024
+              {projects.length}+ selected works from 2023–2025
             </p>
           </div>
           
